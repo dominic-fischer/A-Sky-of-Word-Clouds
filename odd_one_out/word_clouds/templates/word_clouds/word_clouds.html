@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html>
+  <head>
+    <title>☁️ Main page</title>
+    <!--uncomment these for the automatic updated of JS and CSS, respectively-->
+    <!--<script src='/static/wordcloud_combined.js?{% now "U" %}' defer></script>-->
+    <script src="/static/wordcloud_combined.js?" defer></script>
+    <!--<link
+      rel="stylesheet"
+      href='/static/word_clouds/wordcloud.css?{% now "U" %}'
+    />-->
+    <link rel="stylesheet" href="/static/word_clouds/wordcloud.css?" />
+  </head>
+
+  <body>
+    <div id="overlay">
+      <div id="modal" class="whitebox">
+        <div id="insideModal" class="insidebox"></div>
+      </div>
+    </div>
+
+    <div id="splitscreen">
+      <div class="top">
+        <div class="cloudContainer" id="cloudContainer0">
+          <div class="cloudOutline" id="container0">
+            <div class="cloudPuffs">
+              <div class="puff puff1"></div>
+              <div class="puff puff2"></div>
+              <div class="puff puff3"></div>
+            </div>
+            <ul
+              id="ul1"
+              lang="{{langCloud1}}"
+              class="cloud"
+              role="navigation"
+              aria-label="Webdev word cloud"
+            >
+              <li id="LiElem1">
+                <a href="#" data-weight="{{w1}}">{{word11}}</a>
+              </li>
+              <!-- here we'll add in the context in double fancy brackets -->
+              <li id="LiElem2">
+                <a href="#" data-weight="{{w2}}">{{word12}}</a>
+              </li>
+              <li id="LiElem3">
+                <a href="#" data-weight="{{w3}}">{{word13}}</a>
+              </li>
+              <li id="LiElem4">
+                <a href="#" data-weight="{{w4}}">{{word14}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="cloudContainer" id="cloudContainer1">
+          <div class="cloudOutline" id="container1">
+            <div class="cloudPuffs">
+              <div class="puff puff1"></div>
+              <div class="puff puff2"></div>
+              <div class="puff puff3"></div>
+            </div>
+            <ul
+              id="ul2"
+              lang="{{langCloud2}}"
+              class="cloud"
+              role="navigation"
+              aria-label="Webdev word cloud"
+            >
+              <li id="LiElem5">
+                <a href="#" data-weight="{{w5}}">{{word21}}</a>
+              </li>
+              <li id="LiElem6">
+                <a href="#" data-weight="{{w6}}">{{word22}}</a>
+              </li>
+              <li id="LiElem7">
+                <a href="#" data-weight="{{w7}}">{{word23}}</a>
+              </li>
+              <li id="LiElem8">
+                <a href="#" data-weight="{{w8}}">{{word24}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p
+        id="sol_words"
+        odd1="{{odd_word1}}"
+        odd2="{{odd_word2}}"
+        odd3="{{odd_word3}}"
+        odd4="{{odd_word4}}"
+      ></p>
+      <p id="sol_lang" odd_lang="{{odd_lang}}"></p>
+      <p id="sol_cloud" odd_cloud="{{odd_cloud_number}}"></p>
+      <p id="mode" mode="{{mode}}"></p>
+
+      <div class="bottom">
+        <div class="cloudContainer" id="cloudContainer2">
+          <div class="cloudOutline" id="container2">
+            <div class="cloudPuffs">
+              <div class="puff puff1"></div>
+              <div class="puff puff2"></div>
+              <div class="puff puff3"></div>
+            </div>
+            <ul
+              id="ul3"
+              lang="{{langCloud3}}"
+              class="cloud"
+              role="navigation"
+              aria-label="Webdev word cloud"
+            >
+              <li id="LiElem9">
+                <a href="#" data-weight="{{w9}}">{{word31}}</a>
+              </li>
+              <li id="LiElem10">
+                <a href="#" data-weight="{{w10}}">{{word32}}</a>
+              </li>
+              <li id="LiElem11">
+                <a href="#" data-weight="{{w11}}">{{word33}}</a>
+              </li>
+              <li id="LiElem12">
+                <a href="#" data-weight="{{w12}}">{{word34}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="cloudContainer" id="cloudContainer3">
+          <div class="cloudOutline" id="container3">
+            <div class="cloudPuffs">
+              <div class="puff puff1"></div>
+              <div class="puff puff2"></div>
+              <div class="puff puff3"></div>
+            </div>
+            <ul
+              id="ul4"
+              lang="{{langCloud4}}"
+              class="cloud"
+              role="navigation"
+              aria-label="Webdev word cloud"
+            >
+              <li id="LiElem13">
+                <a href="#" data-weight="{{w13}}">{{word41}}</a>
+              </li>
+              <li id="LiElem14">
+                <a href="#" data-weight="{{w14}}">{{word42}}</a>
+              </li>
+              <li id="LiElem15">
+                <a href="#" data-weight="{{w15}}">{{word43}}</a>
+              </li>
+              <li id="LiElem16">
+                <a href="#" data-weight="{{w16}}">{{word44}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="buttonsDiv" id="buttonsDiv">
+      <button id="show-modal-btn" class="button">Press to submit ☁️</button>
+    </div>
+
+    <script>
+      function scaleToFit() {
+        const designWidth = 1200; // your design width
+        const designHeight = 800; // your design height
+        const wrapper = document.getElementById("splitscreen");
+        const scale = Math.min(
+          window.innerWidth / designWidth,
+          window.innerHeight / designHeight
+        );
+        wrapper.style.transform = `scale(${scale})`;
+      }
+      window.addEventListener("resize", scaleToFit);
+      window.addEventListener("DOMContentLoaded", scaleToFit);
+    </script>
+  </body>
+</html>

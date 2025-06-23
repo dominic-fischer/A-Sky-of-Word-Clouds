@@ -1,0 +1,286 @@
+/* add html*/
+body{
+  background: rgb(207, 236, 255);
+  height: 100%;
+  margin-top: 1vh;
+  width: 100%;
+  display: flex;
+  align-items: center; /*adjusts the position to center horizontally*/
+  justify-content: center;  /*adjusts the position to center vertically*/
+  overflow: hidden;
+}
+
+/* i want the splitscreen to adapt to the screen size */
+
+
+.cloudContainer {
+      display: inline-flex;
+}
+
+
+ul.cloud {
+  list-style: none;
+  padding-left: 2em;
+  padding-right: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /*justify-content: center;*/
+  line-height: 2.75rem;
+  width: 90%;
+}
+
+ul.cloud a {
+  --size: 4;
+  --color: #a33;
+  color: var(--color);
+  font-size: calc(var(--size) * 0.25rem + 0.5rem);
+  display: block;
+  padding: 0.125rem 0.25rem;
+  position: relative;
+  text-decoration: none;
+}
+
+ul.cloud a[data-weight="1"] { --size: 1; }
+ul.cloud a[data-weight="2"] { --size: 2; }
+ul.cloud a[data-weight="3"] { --size: 3; }
+ul.cloud a[data-weight="4"] { --size: 4; }
+ul.cloud a[data-weight="5"] { --size: 6; }
+ul.cloud a[data-weight="6"] { --size: 8; }
+ul.cloud a[data-weight="7"] { --size: 10; }
+ul.cloud a[data-weight="8"] { --size: 13; }
+ul.cloud a[data-weight="9"] { --size: 16; }
+
+ul[data-show-value] a::after {
+  content: " (" attr(data-weight) ")";
+  font-size: 1rem;
+}
+
+ul.cloud li:nth-child(2n+1) a { --color: #181; }
+ul.cloud li:nth-child(3n+1) a { --color: #33a; }
+ul.cloud li:nth-child(4n+1) a { --color: #c38; }
+/*
+ul.cloud a:focus {
+  outline: 3px dashed black;
+  border-radius: 30px;
+}*/
+
+ul.cloud a::before {
+  content: "";
+  position: relative;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background: var(--color);
+  transform: translate(-50%, 0);
+  /*opacity: 0.15;*/
+  transition: width 0.25s;
+}
+
+ul.cloud a:focus::before,
+ul.cloud a:hover::before {
+  width: 50%;
+}
+
+ul.cloud {
+  cursor:pointer;
+}
+
+@media (prefers-reduced-motion) {
+  ul.cloud * {
+    transition: none !important;
+  }
+}
+
+svg {
+  height: 100%;
+  width: 100%;
+}
+path {
+  fill: white;
+  stroke: black;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+path:hover {
+  fill: aliceblue;
+  stroke: lightskyblue;
+}
+
+.marked {
+  background-color: rgba(170, 161, 161, 0.341);
+  border-radius: 30px;
+  }
+
+  .button {
+  background-color: white;
+  color: black;
+  border: 2px solid #010201;
+  padding: 15px 32px;
+  text-align: center;
+  /*display: inline-block;*/
+  font-size: 16px;
+  transition-duration: 0.4s;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  /* left: 50%;
+  top: 50%;  */
+  }
+
+.button:hover {
+    background-color: black;
+    color: white;
+    }
+
+.buttonsDiv{
+  position: absolute;
+  left: 42%;
+  bottom: 5vh;
+  
+  /* margin:-50px 0 0 150px; */
+
+}
+
+#overlay{
+  display:none;
+  position: fixed;
+  top:0;
+  bottom:0;
+  left: 0;
+  right:0;
+  z-index:5;
+  background-color: rgba(147, 145, 145, 0.8);
+}
+
+#modal{
+  width: 60%;
+  height: 500px;
+  margin: auto;
+  background: rgb(207, 236, 255);
+  position:absolute; /* position on the page*/ 
+  border-radius: 50px;
+  top:0;
+  bottom:0;
+  left: 0;
+  right:0;
+  display:flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.differentButton {
+  background-color: white;
+  color: black;
+  border: 2px solid #010201;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  min-width: 200px;
+  }
+
+  .differentButton:hover {
+    background-color: black;
+    color: white;
+    }
+
+    #mySpan {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      display: block;
+      font-weight: bold;
+      background: white;
+      padding-left: 2em;
+      padding-right: 2em;
+      color: black;
+      border: 2px solid #010201;
+      padding: 15px 32px;
+    }
+  
+    #divi {
+      position:absolute;
+      width: 100%;
+      text-align: center;
+      top: 0;
+      display: block;
+      padding-left: 2em;
+      padding-right: 2em;
+    }
+
+.cloudOutline {
+  background:white;
+    /*outline: 3px solid rgb(73, 55, 76);*/
+  box-shadow: 5px 10px rgb(154, 144, 166);
+  border-radius: 100px;  /* border roudness  */
+  position: relative;
+  overflow: visible;
+  width: auto; /* Let it grow with content */
+  box-shadow: 5px 10px rgb(154, 144, 166);
+  border-radius: 100px;
+  padding: 2em;
+  margin-right: 70px;
+  background: white;
+  max-width: 450px;    /* or whatever you want, e.g., 25vw or 90vw */
+  min-width: 250px;
+  box-sizing: border-box;
+}
+
+.bottom{
+  padding-top: 10vh;
+}
+
+.top {
+  padding-top: 10vh;
+}
+
+/* The container for the puffs (place this *inside* .cloudOutline in your HTML!) */
+.cloudPuffs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;  /* adjust as needed */
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* All puffs use % for everything now */
+.puff {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  z-index: 0;
+  box-shadow: 0 4px 12px 0 rgba(160, 160, 180, 0.05);
+}
+
+.puff1 { width: 40%; height: 150%; left: 7%;   top: -20%; }
+.puff2 { width: 50%; height: 180%; left: 28%;   top: -39%; }
+.puff3 { width: 40%; height: 120%; left: 55%;   top: -15%; }
+
+ul.cloud {
+  position: relative;
+  z-index: 3;
+}
+.cloudPuffs {
+  z-index: 1;
+}
+.puff4 {
+  z-index: 0;
+}
+
+ul.cloud a {
+  --size: 4;
+  --color: #a33;
+  color: var(--color);
+  font-size: clamp(1.2rem, calc(var(--size) * 0.25rem + 0.5rem), 3.5rem);
+  display: block;
+  padding: 0.125rem 0.25rem;
+  position: relative;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+

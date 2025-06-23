@@ -1,0 +1,494 @@
+{
+  "time": [
+    "bn:00077270n",
+    "NOUN"
+  ],
+  "year": [
+    "bn:00081857n",
+    "NOUN"
+  ],
+  "people": [
+    "bn:00061450n",
+    "NOUN"
+  ],
+  "way": [
+    "bn:00033729n",
+    "NOUN"
+  ],
+  "day": [
+    "bn:00000086n",
+    "NOUN"
+  ],
+  "man": [
+    "bn:00001533n",
+    "NOUN"
+  ],
+  "thing": [
+    "bn:00076925n",
+    "NOUN"
+  ],
+  "woman": [
+    "bn:00001530n",
+    "NOUN"
+  ],
+  "life": [
+    "bn:00051054n",
+    "NOUN"
+  ],
+  "child": [
+    "bn:13312301n",
+    "NOUN"
+  ],
+  "world": [
+    "bn:00029424n",
+    "NOUN"
+  ],
+  "school": [
+    "bn:00069619n",
+    "NOUN"
+  ],
+  "state": [
+    "bn:00023236n",
+    "NOUN"
+  ],
+  "family": [
+    "bn:00032893n",
+    "NOUN"
+  ],
+  "student": [
+    "bn:00029806n",
+    "NOUN"
+  ],
+  "group": [
+    "bn:00041942n",
+    "NOUN"
+  ],
+  "country": [
+    "bn:00023235n",
+    "NOUN"
+  ],
+  "problem": [
+    "bn:00048242n",
+    "NOUN"
+  ],
+  "hand": [
+    "bn:00042759n",
+    "NOUN"
+  ],
+  "part": [
+    "bn:00021395n",
+    "NOUN"
+  ],
+  "place": [
+    "bn:00062699n",
+    "NOUN"
+  ],
+  "case": [
+    "bn:00016402n",
+    "NOUN"
+  ],
+  "week": [
+    "bn:00043484n",
+    "NOUN"
+  ],
+  "company": [
+    "bn:00021286n",
+    "NOUN"
+  ],
+  "system": [
+    "bn:15125301n",
+    "NOUN"
+  ],
+  "program": [
+    "bn:00013235n",
+    "NOUN"
+  ],
+  "question": [
+    "bn:00047208n",
+    "NOUN"
+  ],
+  "work": [
+    "bn:00095812v",
+    "VERB"
+  ],
+  "government": [
+    "bn:00007299n",
+    "NOUN"
+  ],
+  "number": [
+    "bn:00058285n",
+    "NOUN"
+  ],
+  "night": [
+    "bn:00025236n",
+    "NOUN"
+  ],
+  "point": [
+    "bn:00036777n",
+    "NOUN"
+  ],
+  "home": [
+    "bn:00000356n",
+    "NOUN"
+  ],
+  "water": [
+    "bn:00042379n",
+    "NOUN"
+  ],
+  "room": [
+    "bn:00068233n",
+    "NOUN"
+  ],
+  "mother": [
+    "bn:00034027n",
+    "NOUN"
+  ],
+  "area": [
+    "bn:00005513n",
+    "NOUN"
+  ],
+  "money": [
+    "bn:00055644n",
+    "NOUN"
+  ],
+  "story": [
+    "bn:00056857n",
+    "NOUN"
+  ],
+  "fact": [
+    "bn:00032655n",
+    "NOUN"
+  ],
+  "month": [
+    "bn:00014710n",
+    "NOUN"
+  ],
+  "lot": [
+    "bn:00008985n",
+    "NOUN"
+  ],
+  "right": [
+    "bn:00100490a",
+    "ADJ"
+  ],
+  "study": [
+    "bn:00082596v",
+    "NOUN"
+  ],
+  "book": [
+    "bn:00012059n",
+    "NOUN"
+  ],
+  "eye": [
+    "bn:00032512n",
+    "NOUN"
+  ],
+  "job": [
+    "bn:00014138n",
+    "NOUN"
+  ],
+  "word": [
+    "bn:00081546n",
+    "NOUN"
+  ],
+  "business": [
+    "bn:00014136n",
+    "NOUN"
+  ],
+  "issue": [
+    "bn:00047690n",
+    "NOUN"
+  ],
+  "be": [
+    "bn:00083184v",
+    "VERB"
+  ],
+  "have": [
+    "bn:00089241v",
+    "VERB"
+  ],
+  "do": [
+    "bn:00082286v",
+    "VERB"
+  ],
+  "say": [
+    "bn:00093287v",
+    "VERB"
+  ],
+  "go": [
+    "bn:00095597v",
+    "VERB"
+  ],
+  "can": [
+    "bn:13644876v",
+    "VERB"
+  ],
+  "get": [
+    "bn:00089246v",
+    "VERB"
+  ],
+  "make": [
+    "bn:00086013v",
+    "VERB"
+  ],
+  "know": [
+    "bn:00085261v",
+    "VERB"
+  ],
+  "think": [
+    "bn:00083370v",
+    "VERB"
+  ],
+  "take": [
+    "bn:00084931v",
+    "VERB"
+  ],
+  "see": [
+    "bn:00093430v",
+    "VERB"
+  ],
+  "come": [
+    "bn:00085363v",
+    "VERB"
+  ],
+  "want": [
+    "bn:00086682v",
+    "VERB"
+  ],
+  "look": [
+    "bn:00090448v",
+    "VERB"
+  ],
+  "use": [
+    "bn:00082705v",
+    "VERB"
+  ],
+  "find": [
+    "bn:00088204v",
+    "VERB"
+  ],
+  "give": [
+    "bn:00088815v",
+    "VERB"
+  ],
+  "tell": [
+    "bn:00093287v",
+    "VERB"
+  ],
+  "call": [
+    "bn:00084387v",
+    "VERB"
+  ],
+  "try": [
+    "bn:00082844v",
+    "VERB"
+  ],
+  "ask": [
+    "bn:00082817v",
+    "VERB"
+  ],
+  "need": [
+    "bn:00091028v",
+    "VERB"
+  ],
+  "feel": [
+    "bn:00088095v",
+    "VERB"
+  ],
+  "other": [
+    "bn:00108011a",
+    "ADJ"
+  ],
+  "new": [
+    "bn:00107267a",
+    "ADJ"
+  ],
+  "good": [
+    "bn:00103677a",
+    "ADJ"
+  ],
+  "high": [
+    "bn:00111630a",
+    "ADJ"
+  ],
+  "old": [
+    "bn:00107786a",
+    "ADJ"
+  ],
+  "great": [
+    "bn:00102496a",
+    "ADJ"
+  ],
+  "big": [
+    "bn:00098342a",
+    "ADJ"
+  ],
+  "american": [
+    "bn:00096963a",
+    "ADJ"
+  ],
+  "small": [
+    "bn:00106058a",
+    "ADJ"
+  ],
+  "national": [
+    "bn:00107136a",
+    "ADJ"
+  ],
+  "young": [
+    "bn:00104589a",
+    "ADJ"
+  ],
+  "different": [
+    "bn:00101347a",
+    "ADJ"
+  ],
+  "black": [
+    "bn:00098480a",
+    "ADJ"
+  ],
+  "long": [
+    "bn:00106124a",
+    "ADJ"
+  ],
+  "little": [
+    "bn:00106059a",
+    "ADJ"
+  ],
+  "important": [
+    "bn:00104680a",
+    "ADJ"
+  ],
+  "political": [
+    "bn:00108759a",
+    "ADJ"
+  ],
+  "bad": [
+    "bn:00097966a",
+    "ADJ"
+  ],
+  "white": [
+    "bn:00113830a",
+    "ADJ"
+  ],
+  "real": [
+    "bn:00109494a",
+    "ADJ"
+  ],
+  "best": [
+    "bn:00098274a",
+    "ADJ"
+  ],
+  "social": [
+    "bn:00110842a",
+    "ADJ"
+  ],
+  "public": [
+    "bn:00109211a",
+    "ADJ"
+  ],
+  "sure": [
+    "bn:00099475a",
+    "ADJ"
+  ],
+  "up": [
+    "bn:00117522r",
+    "ADV"
+  ],
+  "so": [
+    "bn:00117043r",
+    "ADV"
+  ],
+  "just": [
+    "bn:00114626r",
+    "ADV"
+  ],
+  "now": [
+    "bn:00114424r",
+    "ADV"
+  ],
+  "how": [
+    "bn:13703918r",
+    "ADV"
+  ],
+  "then": [
+    "bn:00114281r",
+    "ADV"
+  ],
+  "more": [
+    "bn:00116284r",
+    "ADV"
+  ],
+  "also": [
+    "bn:00114246r",
+    "ADV"
+  ],
+  "here": [
+    "bn:00115641r",
+    "ADV"
+  ],
+  "well": [
+    "bn:00115530r",
+    "ADV"
+  ],
+  "very": [
+    "bn:00116789r",
+    "ADV"
+  ],
+  "even": [
+    "bn:00115244r",
+    "ADV"
+  ],
+  "back": [
+    "bn:00114474r",
+    "ADV"
+  ],
+  "there": [
+    "bn:00114427r",
+    "ADV"
+  ],
+  "down": [
+    "bn:00115109r",
+    "ADV"
+  ],
+  "still": [
+    "bn:00114216r",
+    "ADV"
+  ],
+  "in": [
+    "bn:00115781r",
+    "ADV"
+  ],
+  "as": [
+    "bn:00114354r",
+    "ADV"
+  ],
+  "when": [
+    "bn:13604551r",
+    "ADV"
+  ],
+  "never": [
+    "bn:00116326r",
+    "ADV"
+  ],
+  "really": [
+    "bn:00115504r",
+    "ADV"
+  ],
+  "why": [
+    "bn:13602210r",
+    "ADV"
+  ],
+  "about": [
+    "bn:00114073r",
+    "ADV"
+  ],
+  "again": [
+    "bn:00114171r",
+    "ADV"
+  ],
+  "where": [
+    "bn:13602906r",
+    "ADV"
+  ]
+}
