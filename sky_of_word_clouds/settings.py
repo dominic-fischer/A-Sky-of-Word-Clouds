@@ -51,7 +51,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "odd_one_out.urls"
+ROOT_URLCONF = "sky_of_word_clouds.urls"
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "odd_one_out.wsgi.application"
+WSGI_APPLICATION = "sky_of_word_clouds.wsgi.application"
 
 
 # Database

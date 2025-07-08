@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "odd_one_out.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "sky_of_word_clouds.settings")
 
 application = get_asgi_application()
