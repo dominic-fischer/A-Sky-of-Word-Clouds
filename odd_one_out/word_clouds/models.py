@@ -101,7 +101,6 @@ class Words(models.Model):
     AZ = models.CharField(default="None", max_length=25)
     KK = models.CharField(default="None", max_length=25)
     TR = models.CharField(default="None", max_length=25)
-    ZU = models.CharField(default="None", max_length=25)
     TT = models.CharField(default="None", max_length=25)
     ET = models.CharField(default="None", max_length=25)
     FI = models.CharField(default="None", max_length=25)

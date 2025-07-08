@@ -1,5 +1,16 @@
 gamemode = document.getElementById("mode").getAttribute("mode")
 console.log(gamemode)
+difficulty = document.getElementById("difficulty").getAttribute("difficulty")
+console.log(difficulty)
+four_words = document.getElementById("words").getAttribute("words")
+console.log(four_words)
+lang_codes_custom = document.getElementById("lang_codes_custom").getAttribute("lang_codes_custom")
+console.log(lang_codes_custom)
+main_family = document.getElementById("main_family").getAttribute("main_family")
+console.log(main_family)
+odd_family = document.getElementById("odd_family").getAttribute("odd_family")
+console.log(odd_family)
+
 
 if (gamemode == "mode1") {
     console.log("using .js for gamemode 1")
@@ -31,7 +42,13 @@ if (gamemode == "mode1") {
         document.getElementById(b).classList.remove("marked");
         document.getElementById(c).classList.remove("marked");
         document.getElementById(d).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(e).click();
+            document.getElementById(i).click();
+            document.getElementById(m).click();
         }
+    }
     );
     document.getElementById(b).addEventListener("click", function() {
         console.log(b, "was clicked");
@@ -39,6 +56,12 @@ if (gamemode == "mode1") {
         document.getElementById(a).classList.remove("marked");
         document.getElementById(c).classList.remove("marked");
         document.getElementById(d).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(f).click();
+            document.getElementById(j).click();
+            document.getElementById(n).click();
+            }
         }
     );
     document.getElementById(c).addEventListener("click", function() {
@@ -47,6 +70,12 @@ if (gamemode == "mode1") {
         document.getElementById(a).classList.remove("marked");
         document.getElementById(b).classList.remove("marked");
         document.getElementById(d).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(g).click();
+            document.getElementById(k).click();
+            document.getElementById(o).click();
+            }
         }
     );
     document.getElementById(d).addEventListener("click", function() {
@@ -55,15 +84,26 @@ if (gamemode == "mode1") {
         document.getElementById(a).classList.remove("marked");
         document.getElementById(b).classList.remove("marked");
         document.getElementById(c).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(h).click();
+            document.getElementById(l).click();
+            document.getElementById(p).click();
+            }
         }
     );
     document.getElementById(e).addEventListener("click", function() {
         console.log(e, "was clicked");
-        console.log(a, "was clicked");
         document.getElementById(e).classList.add("marked");
         document.getElementById(f).classList.remove("marked");
         document.getElementById(g).classList.remove("marked");
         document.getElementById(h).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(a).click();
+            document.getElementById(i).click();
+            document.getElementById(m).click();
+        }
         }
     );
     document.getElementById(f).addEventListener("click", function() {
@@ -72,6 +112,12 @@ if (gamemode == "mode1") {
         document.getElementById(e).classList.remove("marked");
         document.getElementById(g).classList.remove("marked");
         document.getElementById(h).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(b).click();
+            document.getElementById(j).click();
+            document.getElementById(n).click();
+            }
         }
     );
     document.getElementById(g).addEventListener("click", function() {
@@ -80,6 +126,12 @@ if (gamemode == "mode1") {
         document.getElementById(e).classList.remove("marked");
         document.getElementById(f).classList.remove("marked");
         document.getElementById(h).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(c).click();
+            document.getElementById(k).click();
+            document.getElementById(o).click();
+            }
         }
     );
     document.getElementById(h).addEventListener("click", function() {
@@ -88,6 +140,12 @@ if (gamemode == "mode1") {
         document.getElementById(e).classList.remove("marked");
         document.getElementById(f).classList.remove("marked");
         document.getElementById(g).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(d).click();
+            document.getElementById(l).click();
+            document.getElementById(p).click();
+            }
         }
     );
     document.getElementById(i).addEventListener("click", function() {
@@ -96,6 +154,12 @@ if (gamemode == "mode1") {
         document.getElementById(j).classList.remove("marked");
         document.getElementById(k).classList.remove("marked");
         document.getElementById(l).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(a).click();
+            document.getElementById(e).click();
+            document.getElementById(m).click();
+        }
         }
     );
     document.getElementById(j).addEventListener("click", function() {
@@ -104,7 +168,13 @@ if (gamemode == "mode1") {
         document.getElementById(i).classList.remove("marked");
         document.getElementById(k).classList.remove("marked");
         document.getElementById(l).classList.remove("marked");
-        }
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(b).click();
+            document.getElementById(f).click();
+            document.getElementById(n).click();
+            }
+    }
     );
     document.getElementById(k).addEventListener("click", function() {
         console.log(k, "was clicked");
@@ -112,6 +182,12 @@ if (gamemode == "mode1") {
         document.getElementById(j).classList.remove("marked");
         document.getElementById(i).classList.remove("marked");
         document.getElementById(l).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(c).click();
+            document.getElementById(g).click();
+            document.getElementById(o).click();
+            }
         }
     );
     document.getElementById(l).addEventListener("click", function() {
@@ -120,6 +196,12 @@ if (gamemode == "mode1") {
         document.getElementById(j).classList.remove("marked");
         document.getElementById(k).classList.remove("marked");
         document.getElementById(i).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(d).click();
+            document.getElementById(h).click();
+            document.getElementById(p).click();
+            }
         }
     );
     document.getElementById(m).addEventListener("click", function() {
@@ -128,6 +210,12 @@ if (gamemode == "mode1") {
         document.getElementById(n).classList.remove("marked");
         document.getElementById(o).classList.remove("marked");
         document.getElementById(p).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(a).click();
+            document.getElementById(e).click();
+            document.getElementById(i).click();
+        }
         }
     );
     document.getElementById(n).addEventListener("click", function() {
@@ -136,6 +224,12 @@ if (gamemode == "mode1") {
         document.getElementById(m).classList.remove("marked");
         document.getElementById(o).classList.remove("marked");
         document.getElementById(p).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(b).click();
+            document.getElementById(f).click();
+            document.getElementById(j).click();
+            }
         }
     );
     document.getElementById(o).addEventListener("click", function() {
@@ -144,6 +238,12 @@ if (gamemode == "mode1") {
         document.getElementById(n).classList.remove("marked");
         document.getElementById(m).classList.remove("marked");
         document.getElementById(p).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(c).click();
+            document.getElementById(g).click();
+            document.getElementById(k).click();
+            }
         }
     );
     document.getElementById(p).addEventListener("click", function() {
@@ -152,6 +252,12 @@ if (gamemode == "mode1") {
         document.getElementById(n).classList.remove("marked");
         document.getElementById(o).classList.remove("marked");
         document.getElementById(m).classList.remove("marked");
+        // Simulate clicks on e, i, and m
+        if (difficulty !== "hard") {
+            document.getElementById(d).click();
+            document.getElementById(h).click();
+            document.getElementById(l).click();
+            }
         }
     );
 
@@ -219,6 +325,19 @@ if (gamemode == "mode1") {
         sp = document.createElement("span");
         /*sp.textContent = "your score is: " + score + yeet;*/
         sp.textContent = "your score is: " + score + " out of 4";
+
+        // Style the span based on score
+        if (score === 4) {
+            sp.style.backgroundColor = "#b2f2bb";
+        } else if (score === 3) {
+            sp.style.backgroundColor = "#f8ffe0";
+        } else if (score === 2) {
+            sp.style.backgroundColor = "#fff3bf";
+        } else if (score === 1) {
+            sp.style.backgroundColor = "#ffd8a8";
+        } else {
+            sp.style.backgroundColor = "#ffa8a8";
+        }
         
         menu_button = document.createElement("button");
         menu_button.classList.add("button")
@@ -321,9 +440,11 @@ if (gamemode == "mode1") {
         sp = document.createElement("span");
             /*sp.textContent = "your score is: " + score + yeet;*/
         if (score == 1) {
-            sp.textContent = "Success!"
+            sp.textContent = "Success!";
+            sp.style.backgroundColor = "#b2f2bb";
         } else {
             sp.textContent = "Better Luck next time :'("
+            sp.style.backgroundColor = "#ffa8a8";
         }
 
         menu_button = document.createElement("button");
@@ -337,13 +458,20 @@ if (gamemode == "mode1") {
         play_again_button.classList.add("differentButton")
         play_again_button.setAttribute("onclick", "window.location.reload()");
         console.log(play_again_button.textContent)
-        
+
+        solutions_div = document.createElement("div");
+        solutions_paragraph = document.createElement("p");
+        solutions_paragraph.textContent = lang_codes_custom + four_words + main_family + odd_family
+        solutions_div.appendChild(solutions_paragraph)
+
         sp.setAttribute("id", "mySpan");
 
+        /*do some stuff here to add it to divi*/
         divi = document.createElement("div");
         divi.setAttribute("id", "divi");
         divi.appendChild(sp)
         document.getElementById("modal").appendChild(divi)
+        document.getElementById("modal").appendChild(solutions_div)
         document.getElementById("modal").appendChild(menu_button)
         document.getElementById("modal").appendChild(play_again_button)
         }

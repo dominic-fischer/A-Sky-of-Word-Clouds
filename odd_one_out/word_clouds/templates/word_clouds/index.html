@@ -3,7 +3,8 @@
 {% load static %}
 <html lang="en">
   <head>
-    <title>☁️ Word cloud guesser</title>
+    <title>Word cloud guesser</title>
+    <link rel="icon" href="{% static 'word_clouds/favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href='/static/word_clouds/index.css?{% now "U" %}' />
   </head>
   <body>
@@ -24,7 +25,9 @@
     <div class="external">
       <div class="middle">
         <div class="internal">
-          <p>Word clouds and language families</p>
+          <p>A Sky of Word Clouds
+            <span class="subtitle">Find the (words of the) impostor language!</span>
+          </p>
           <!--<button onClick = "window.location='clouds'" type ="button" class = "button"> Press to play ☁️</button> -->
           <form class="toggle" action="clouds" method="get">
             <input
@@ -53,7 +56,15 @@
               name="difficulty"
               value="easy"
             />
-            <label class="fontfont" for="easy">mere mortal</label><br />
+            <label class="fontfont" for="easy">
+              mere mortal
+              <span
+                title="For casual players: Colour-coding according to language or word."
+                >ℹ️</span
+              >
+            </label>
+
+            <br />
 
             <input
               class="radio2"
@@ -62,8 +73,15 @@
               name="difficulty"
               value="hard"
             />
-            <label class="fontfont" for="hard">linguist</label
-            ><br /><br /><br /><br />
+            <label class="fontfont" for="hard">
+              linguist
+              <span
+                title="For language nerds: Words randomly shuffled, no colour-coding."
+                >ℹ️</span
+              >
+            </label>
+
+            <br /><br /><br /><br />
 
             <button type="submit" class="button" value="clouds">
               Press to play ☁️

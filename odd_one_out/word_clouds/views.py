@@ -60,6 +60,7 @@ def clouds(request):  # add word later
         odd_selected = random.choice(odd_langs)
         all_langs = main_selected + [odd_selected]
         lang_codes = [l.lang_identifier for l in all_langs]
+        lang_codes_custom = [l.lang_name for l in all_langs]
 
         # Now try to find n words present in ALL those languages
         valid_word_objs = []
@@ -75,9 +76,11 @@ def clouds(request):  # add word later
 
         chosen_word_objs = random.sample(valid_word_objs, n)
         random_main_words = []
+        random_main_words_custom = []
         for word_obj in chosen_word_objs:
             words_per_lang = [str(getattr(word_obj, code)) for code in lang_codes]
             random_main_words.append((word_obj, words_per_lang))
+            random_main_words_custom.append((word_obj.word, words_per_lang))
         success = True
         break
 
@@ -85,13 +88,10 @@ def clouds(request):  # add word later
         return HttpResponse(
             "No valid combination of languages and words found. Try reloading or check your data!"
         )
-    
 
     # Define odd_words and odd_lang for use in the context
     odd_words = [words_per_lang[3] for _, words_per_lang in random_main_words]
     odd_lang = odd_selected
-
-
 
     access_list = ["1", "2", "3", "4"]
     shuffled_list = random.sample(access_list, len(access_list))
@@ -275,11 +275,19 @@ def clouds(request):  # add word later
 
     # and the odd lang
     context["odd_lang"] = odd_lang
+    context["odd_family"] = odd_family
+    context["main_family"] = main_family
+    context["all_langs"] = all_families
+    context["words"] = random_main_words_custom
+    context["lang_codes_custom"] = lang_codes_custom
+    context["odd_words"] = odd_words
+    
 
     odd_cloud_number = d
     context["odd_cloud_number"] = odd_cloud_number
 
     context["mode"] = game_mode
+    context["difficulty"] = difficulty
 
     # context["btw"] = main_words
 

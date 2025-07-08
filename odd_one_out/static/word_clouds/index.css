@@ -379,6 +379,16 @@ p {
     border-radius: 50px;
     background: white;
   }
+
+  .subtitle{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+  }
+
+  .title{
+    font-size: 3em;
+    padding-bottom: 0em;
+  }
   
   /* increase the top and it goes lower; decrease the left and it goes left*/
   /* second circle */

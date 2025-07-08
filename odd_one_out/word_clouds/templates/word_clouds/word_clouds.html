@@ -3,10 +3,11 @@
 {% load static %}
 <html>
   <head>
-    <title>☁️ Main page</title>
+    <link rel="icon" href="{% static 'word_clouds/favicon.ico' %}" type="image/x-icon">
+    <title>Main page</title>
     <!--uncomment these for the automatic updated of JS and CSS, respectively-->
-    <!--<script src='/static/wordcloud_combined.js?{% now "U" %}' defer></script>-->
-    <script src="/static/wordcloud_combined.js?" defer></script>
+    <!--<script src='/static/word_clouds/wordcloud_combined.js?{% now "U" %}' defer></script>-->
+    <script src="/static/word_clouds/wordcloud_combined.js?" defer></script>
     <!--<link
       rel="stylesheet"
       href='/static/word_clouds/wordcloud.css?{% now "U" %}'
@@ -93,6 +94,11 @@
       <p id="sol_lang" odd_lang="{{odd_lang}}"></p>
       <p id="sol_cloud" odd_cloud="{{odd_cloud_number}}"></p>
       <p id="mode" mode="{{mode}}"></p>
+      <p id="difficulty" difficulty="{{difficulty}}"></p>
+      <p id="words" words="{{words}}"></p>
+      <p id="lang_codes_custom" lang_codes_custom="{{lang_codes_custom}}"></p>
+      <p id="main_family" main_family="{{main_family}}"></p>
+      <p id="odd_family" odd_family="{{odd_family}}"></p>
 
       <div class="bottom">
         <div class="cloudContainer" id="cloudContainer2">

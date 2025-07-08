@@ -1,22 +1,20 @@
 /* add html*/
-body{
+body {
   background: rgb(207, 236, 255);
   height: 100%;
   margin-top: 1vh;
   width: 100%;
   display: flex;
   align-items: center; /*adjusts the position to center horizontally*/
-  justify-content: center;  /*adjusts the position to center vertically*/
+  justify-content: center; /*adjusts the position to center vertically*/
   overflow: hidden;
 }
 
 /* i want the splitscreen to adapt to the screen size */
 
-
 .cloudContainer {
-      display: inline-flex;
+  display: inline-flex;
 }
-
 
 ul.cloud {
   list-style: none;
@@ -41,24 +39,48 @@ ul.cloud a {
   text-decoration: none;
 }
 
-ul.cloud a[data-weight="1"] { --size: 1; }
-ul.cloud a[data-weight="2"] { --size: 2; }
-ul.cloud a[data-weight="3"] { --size: 3; }
-ul.cloud a[data-weight="4"] { --size: 4; }
-ul.cloud a[data-weight="5"] { --size: 6; }
-ul.cloud a[data-weight="6"] { --size: 8; }
-ul.cloud a[data-weight="7"] { --size: 10; }
-ul.cloud a[data-weight="8"] { --size: 13; }
-ul.cloud a[data-weight="9"] { --size: 16; }
+ul.cloud a[data-weight="1"] {
+  --size: 1;
+}
+ul.cloud a[data-weight="2"] {
+  --size: 2;
+}
+ul.cloud a[data-weight="3"] {
+  --size: 3;
+}
+ul.cloud a[data-weight="4"] {
+  --size: 4;
+}
+ul.cloud a[data-weight="5"] {
+  --size: 6;
+}
+ul.cloud a[data-weight="6"] {
+  --size: 8;
+}
+ul.cloud a[data-weight="7"] {
+  --size: 10;
+}
+ul.cloud a[data-weight="8"] {
+  --size: 13;
+}
+ul.cloud a[data-weight="9"] {
+  --size: 16;
+}
 
 ul[data-show-value] a::after {
   content: " (" attr(data-weight) ")";
   font-size: 1rem;
 }
 
-ul.cloud li:nth-child(2n+1) a { --color: #181; }
-ul.cloud li:nth-child(3n+1) a { --color: #33a; }
-ul.cloud li:nth-child(4n+1) a { --color: #c38; }
+ul.cloud li:nth-child(2n + 1) a {
+  --color: #181;
+}
+ul.cloud li:nth-child(3n + 1) a {
+  --color: #33a;
+}
+ul.cloud li:nth-child(4n + 1) a {
+  --color: #c38;
+}
 /*
 ul.cloud a:focus {
   outline: 3px dashed black;
@@ -84,7 +106,7 @@ ul.cloud a:hover::before {
 }
 
 ul.cloud {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion) {
@@ -111,9 +133,9 @@ path:hover {
 .marked {
   background-color: rgba(170, 161, 161, 0.341);
   border-radius: 30px;
-  }
+}
 
-  .button {
+.button {
   background-color: white;
   color: black;
   border: 2px solid #010201;
@@ -122,49 +144,48 @@ path:hover {
   /*display: inline-block;*/
   font-size: 16px;
   transition-duration: 0.4s;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 
   /* left: 50%;
   top: 50%;  */
-  }
+}
 
 .button:hover {
-    background-color: black;
-    color: white;
-    }
+  background-color: black;
+  color: white;
+}
 
-.buttonsDiv{
+.buttonsDiv {
   position: absolute;
   left: 42%;
   bottom: 5vh;
-  
-  /* margin:-50px 0 0 150px; */
 
+  /* margin:-50px 0 0 150px; */
 }
 
-#overlay{
-  display:none;
+#overlay {
+  display: none;
   position: fixed;
-  top:0;
-  bottom:0;
+  top: 0;
+  bottom: 0;
   left: 0;
-  right:0;
-  z-index:5;
+  right: 0;
+  z-index: 5;
   background-color: rgba(147, 145, 145, 0.8);
 }
 
-#modal{
+#modal {
   width: 60%;
   height: 500px;
   margin: auto;
   background: rgb(207, 236, 255);
-  position:absolute; /* position on the page*/ 
+  position: absolute; /* position on the page*/
   border-radius: 50px;
-  top:0;
-  bottom:0;
+  top: 0;
+  bottom: 0;
   left: 0;
-  right:0;
-  display:flex; 
+  right: 0;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -179,42 +200,42 @@ path:hover {
   display: block;
   font-size: 16px;
   transition-duration: 0.4s;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   min-width: 200px;
-  }
+}
 
-  .differentButton:hover {
-    background-color: black;
-    color: white;
-    }
+.differentButton:hover {
+  background-color: black;
+  color: white;
+}
 
-    #mySpan {
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      display: block;
-      font-weight: bold;
-      background: white;
-      padding-left: 2em;
-      padding-right: 2em;
-      color: black;
-      border: 2px solid #010201;
-      padding: 15px 32px;
-    }
-  
-    #divi {
-      position:absolute;
-      width: 100%;
-      text-align: center;
-      top: 0;
-      display: block;
-      padding-left: 2em;
-      padding-right: 2em;
-    }
+#mySpan {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: block;
+  font-weight: bold;
+  background: white;
+  padding-left: 2em;
+  padding-right: 2em;
+  color: black;
+  border: 2px solid #010201;
+  padding: 15px 32px;
+}
+
+#divi {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 0;
+  display: block;
+  padding-left: 2em;
+  padding-right: 2em;
+}
 
 .cloudOutline {
-  background:white;
-    /*outline: 3px solid rgb(73, 55, 76);*/
+  background: white;
+  /*outline: 3px solid rgb(73, 55, 76);*/
   box-shadow: 5px 10px rgb(154, 144, 166);
-  border-radius: 100px;  /* border roudness  */
+  border-radius: 100px; /* border roudness  */
   position: relative;
   overflow: visible;
   width: auto; /* Let it grow with content */
@@ -223,13 +244,12 @@ path:hover {
   padding: 2em;
   margin-right: 70px;
   background: white;
-  max-width: 450px;    /* or whatever you want, e.g., 25vw or 90vw */
+  max-width: 450px; /* or whatever you want, e.g., 25vw or 90vw */
   min-width: 250px;
   box-sizing: border-box;
 }
 
-
-.bottom{
+.bottom {
   padding-top: 10vh;
 }
 
@@ -243,7 +263,7 @@ path:hover {
   top: 0;
   left: 0;
   width: 100%;
-  height: 65%;  /* adjust as needed */
+  height: 65%; /* adjust as needed */
   pointer-events: none;
 }
 
@@ -256,9 +276,24 @@ path:hover {
   box-shadow: 0 4px 12px 0 rgba(160, 160, 180, 0.05);
 }
 
-.puff1 { width: 40%; height: 150%; left: 7%;   top: -20%; }
-.puff2 { width: 50%; height: 180%; left: 28%;   top: -39%; }
-.puff3 { width: 40%; height: 120%; left: 55%;   top: -15%; }
+.puff1 {
+  width: 40%;
+  height: 150%;
+  left: 7%;
+  top: -20%;
+}
+.puff2 {
+  width: 50%;
+  height: 180%;
+  left: 28%;
+  top: -39%;
+}
+.puff3 {
+  width: 40%;
+  height: 120%;
+  left: 55%;
+  top: -15%;
+}
 
 ul.cloud {
   position: relative;
@@ -280,5 +315,3 @@ ul.cloud a {
   text-decoration: none;
   word-break: break-word;
 }
-
-
