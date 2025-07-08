@@ -2,14 +2,21 @@ gamemode = document.getElementById("mode").getAttribute("mode")
 console.log(gamemode)
 difficulty = document.getElementById("difficulty").getAttribute("difficulty")
 console.log(difficulty)
-four_words = document.getElementById("words").getAttribute("words")
-console.log(four_words)
+words1 = document.getElementById("words1").getAttribute("words1")
+console.log(words1)
+words2 = document.getElementById("words2").getAttribute("words2")
+console.log(words2)
+words3 = document.getElementById("words3").getAttribute("words3")
+console.log(words3)
+words4 = document.getElementById("words4").getAttribute("words4")
+console.log(words4)
+words_reference = document.getElementById("words_reference").getAttribute("words_reference")
+console.log(words_reference)
 lang_codes_custom = document.getElementById("lang_codes_custom").getAttribute("lang_codes_custom")
 console.log(lang_codes_custom)
-main_family = document.getElementById("main_family").getAttribute("main_family")
-console.log(main_family)
-odd_family = document.getElementById("odd_family").getAttribute("odd_family")
-console.log(odd_family)
+families = document.getElementById("families").getAttribute("families")
+console.log(families)
+
 
 
 if (gamemode == "mode1") {
@@ -301,7 +308,7 @@ if (gamemode == "mode1") {
         console.log(clickeds)
 
         for (const clicked of clickeds) {
-            console.log(clicked)
+            console.log("CLICKED:" + clicked)
         }
 
 
@@ -326,11 +333,13 @@ if (gamemode == "mode1") {
         /*sp.textContent = "your score is: " + score + yeet;*/
         sp.textContent = "your score is: " + score + " out of 4";
 
+
+
         // Style the span based on score
         if (score === 4) {
             sp.style.backgroundColor = "#b2f2bb";
         } else if (score === 3) {
-            sp.style.backgroundColor = "#f8ffe0";
+            sp.style.backgroundColor = "#d1e0a2";
         } else if (score === 2) {
             sp.style.backgroundColor = "#fff3bf";
         } else if (score === 1) {
@@ -339,26 +348,125 @@ if (gamemode == "mode1") {
             sp.style.backgroundColor = "#ffa8a8";
         }
         
-        menu_button = document.createElement("button");
-        menu_button.classList.add("button")
-        menu_button.textContent = "Return to menu"
-        menu_button.setAttribute("onclick", "window.location.href = 'http://127.0.0.1:8000/word_clouds/';");
-        console.log(menu_button.textContent)
+// Create solution div
+        let solutions_div = document.createElement("div");
+        let solutions_paragraph = document.createElement("p");
+        solutions_paragraph.textContent = "";
+        solutions_div.appendChild(solutions_paragraph);
 
-        play_again_button = document.createElement("button");
-        play_again_button.textContent = "\n\nPlay again"
-        play_again_button.classList.add("button")
-        play_again_button.setAttribute("onclick", "window.location.reload()");
-        console.log(play_again_button.textContent)
+        // Helper styling
+        function styleCell(cell) {
+            cell.style.border = "1px solid black";
+            cell.style.padding = "6px 12px";
+            cell.style.textAlign = "center";
+        }
+
+        // Parse the variables
+        let langNames = JSON.parse(lang_codes_custom.replace(/'/g, '"'));   // ['telugu', 'kannada', ...]
+        let familiesList = JSON.parse(families.replace(/'/g, '"'));         // ['dravidian', 'dravidian', ...]
+        let w1 = JSON.parse(words1.replace(/'/g, '"'));                     // word list 1 (first column)
+        let w2 = JSON.parse(words2.replace(/'/g, '"'));
+        let w3 = JSON.parse(words3.replace(/'/g, '"'));
+        let w4 = JSON.parse(words4.replace(/'/g, '"'));
+
+        let words_ls = [w1, w2, w3, w4]
+
+        let rows = langNames.map((lang, i) => ({
+            label: `${lang} (${familiesList[i]})`,
+            words: words_ls[i]
+        }));
+
+        // Create table
+        let table = document.createElement("table");
+        table.style.borderCollapse = "collapse";
+        table.style.margin = "20px auto";
+
+        let tableContainer = document.createElement("div");
+        tableContainer.style.textAlign = "center";
+
+        // Header
+        // Parse words_reference string to an actual array
+        let referenceWords = JSON.parse(words_reference.replace(/'/g, '"'));
+
+        // Create the header row
+        let headerRow = document.createElement("tr");
+
+        // First (top-left) empty corner cell
+        let emptyCell = document.createElement("th");
+        emptyCell.textContent = "";
+        styleCell(emptyCell);
+        headerRow.appendChild(emptyCell);
+
+        // Then use actual reference words for column headers
+        referenceWords.forEach(text => {
+            let th = document.createElement("th");
+            th.textContent = text;
+            styleCell(th);
+            headerRow.appendChild(th);
+        });
+
+        table.appendChild(headerRow);
+
+        // Rows
+        rows.forEach((row, rowIndex) => {
+            let tr = document.createElement("tr");
+
+            let labelCell = document.createElement("td");
+            labelCell.textContent = row.label;
+            styleCell(labelCell);
+            tr.appendChild(labelCell);
+
+            row.words.forEach((word, wordIndex) => {
+                let td = document.createElement("td");
+                td.textContent = word;
+                styleCell(td);
+                console.log(rowIndex)
+                if (clickeds.includes(word) && sol_words.includes(word) && rowIndex == 3) {
+                    td.style.backgroundColor = "#b2f2bb";  // light green
+                } else if (sol_words.includes(word) && !clickeds.includes(word) && rowIndex == 3) {
+                    td.style.backgroundColor = "#ffa8a8";  // light red
+                }
+                tr.appendChild(td);
+            });
+
+            table.appendChild(tr);
+        });
 
         sp.setAttribute("id", "mySpan");
 
-        divi = document.createElement("div");
+        tableContainer.appendChild(table);
+        solutions_div.appendChild(tableContainer);
+
+        // Create button container
+        let button_container = document.createElement("div");
+        button_container.style.display = "flex";
+        button_container.style.justifyContent = "center";
+        button_container.style.gap = "20px";
+
+        // Create buttons
+        let menu_button = document.createElement("button");
+        menu_button.classList.add("differentButton");
+        menu_button.textContent = "Return to menu";
+        menu_button.setAttribute("onclick", "window.location.href = 'http://127.0.0.1:8000/word_clouds/';");
+
+        let play_again_button = document.createElement("button");
+        play_again_button.textContent = "Play again";
+        play_again_button.classList.add("differentButton");
+        play_again_button.setAttribute("onclick", "window.location.reload()");
+
+        // Append buttons to container
+        button_container.appendChild(menu_button);
+        button_container.appendChild(play_again_button);
+
+        // Final wrapper
+        let divi = document.createElement("div");
         divi.setAttribute("id", "divi");
-        divi.appendChild(sp)
-        document.getElementById("modal").appendChild(divi)
-        document.getElementById("modal").appendChild(menu_button)
-        document.getElementById("modal").appendChild(play_again_button)
+        divi.appendChild(sp);
+        divi.appendChild(solutions_div);
+        divi.appendChild(button_container);
+
+        // Append everything to modal
+        document.getElementById("modal").appendChild(divi);
         
         }
     );
@@ -437,43 +545,137 @@ if (gamemode == "mode1") {
             score += 1;
         }
 
-        sp = document.createElement("span");
-            /*sp.textContent = "your score is: " + score + yeet;*/
+        // Create the span for result
+        let sp = document.createElement("span");
         if (score == 1) {
             sp.textContent = "Success!";
             sp.style.backgroundColor = "#b2f2bb";
+            clickResults = [[0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 0.5], [1, 1, 1, 1]]
         } else {
-            sp.textContent = "Better Luck next time :'("
+            sp.textContent = "Better Luck next time :'(";
             sp.style.backgroundColor = "#ffa8a8";
+            clickResults = [[0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 0.5], [0.5, 0.5, 0.5, 0.5], [0, 0, 0, 0]]
         }
-
-        menu_button = document.createElement("button");
-        menu_button.classList.add("differentButton")
-        menu_button.textContent = "Return to menu"
-        menu_button.setAttribute("onclick", "window.location.href = 'http://127.0.0.1:8000/word_clouds/';");
-        console.log(menu_button.textContent)
-
-        play_again_button = document.createElement("button");
-        play_again_button.textContent = "\n\nPlay again"
-        play_again_button.classList.add("differentButton")
-        play_again_button.setAttribute("onclick", "window.location.reload()");
-        console.log(play_again_button.textContent)
-
-        solutions_div = document.createElement("div");
-        solutions_paragraph = document.createElement("p");
-        solutions_paragraph.textContent = lang_codes_custom + four_words + main_family + odd_family
-        solutions_div.appendChild(solutions_paragraph)
-
         sp.setAttribute("id", "mySpan");
 
-        /*do some stuff here to add it to divi*/
-        divi = document.createElement("div");
+        // Create solution div
+        let solutions_div = document.createElement("div");
+        let solutions_paragraph = document.createElement("p");
+        solutions_paragraph.textContent = "";
+        solutions_div.appendChild(solutions_paragraph);
+
+        // Helper styling
+        function styleCell(cell) {
+            cell.style.border = "1px solid black";
+            cell.style.padding = "6px 12px";
+            cell.style.textAlign = "center";
+        }
+
+        // Parse the variables
+        let langNames = JSON.parse(lang_codes_custom.replace(/'/g, '"'));   // ['telugu', 'kannada', ...]
+        let familiesList = JSON.parse(families.replace(/'/g, '"'));         // ['dravidian', 'dravidian', ...]
+        let w1 = JSON.parse(words1.replace(/'/g, '"'));                     // word list 1 (first column)
+        let w2 = JSON.parse(words2.replace(/'/g, '"'));
+        let w3 = JSON.parse(words3.replace(/'/g, '"'));
+        let w4 = JSON.parse(words4.replace(/'/g, '"'));
+
+        let words_ls = [w1, w2, w3, w4]
+
+        let rows = langNames.map((lang, i) => ({
+            label: `${lang} (${familiesList[i]})`,
+            words: words_ls[i]
+        }));
+
+        // Create table
+        let table = document.createElement("table");
+        table.style.borderCollapse = "collapse";
+        table.style.margin = "20px auto";
+
+        let tableContainer = document.createElement("div");
+        tableContainer.style.textAlign = "center";
+
+        // Header
+        // Parse words_reference string to an actual array
+        let referenceWords = JSON.parse(words_reference.replace(/'/g, '"'));
+
+        // Create the header row
+        let headerRow = document.createElement("tr");
+
+        // First (top-left) empty corner cell
+        let emptyCell = document.createElement("th");
+        emptyCell.textContent = "";
+        styleCell(emptyCell);
+        headerRow.appendChild(emptyCell);
+
+        // Then use actual reference words for column headers
+        referenceWords.forEach(text => {
+            let th = document.createElement("th");
+            th.textContent = text;
+            styleCell(th);
+            headerRow.appendChild(th);
+        });
+
+        table.appendChild(headerRow);
+
+
+        // Rows
+        rows.forEach((row, rowIndex) => {
+            let tr = document.createElement("tr");
+
+            let labelCell = document.createElement("td");
+            labelCell.textContent = row.label;
+            styleCell(labelCell);
+            tr.appendChild(labelCell);
+
+            row.words.forEach((word, wordIndex) => {
+                let td = document.createElement("td");
+                td.textContent = word;
+                styleCell(td);
+                if (score == 1 && clickResults[rowIndex][wordIndex] === 1) {
+                    td.style.backgroundColor = "#b2f2bb";  // light green
+                } else if (clickResults[rowIndex][wordIndex] === 0) {
+                    td.style.backgroundColor = "#ffa8a8";  // light red
+                }
+                tr.appendChild(td);
+            });
+
+            table.appendChild(tr);
+        });
+
+        tableContainer.appendChild(table);
+        solutions_div.appendChild(tableContainer);
+
+        // Create button container
+        let button_container = document.createElement("div");
+        button_container.style.display = "flex";
+        button_container.style.justifyContent = "center";
+        button_container.style.gap = "20px";
+
+        // Create buttons
+        let menu_button = document.createElement("button");
+        menu_button.classList.add("differentButton");
+        menu_button.textContent = "Return to menu";
+        menu_button.setAttribute("onclick", "window.location.href = 'http://127.0.0.1:8000/word_clouds/';");
+
+        let play_again_button = document.createElement("button");
+        play_again_button.textContent = "Play again";
+        play_again_button.classList.add("differentButton");
+        play_again_button.setAttribute("onclick", "window.location.reload()");
+
+        // Append buttons to container
+        button_container.appendChild(menu_button);
+        button_container.appendChild(play_again_button);
+
+        // Final wrapper
+        let divi = document.createElement("div");
         divi.setAttribute("id", "divi");
-        divi.appendChild(sp)
-        document.getElementById("modal").appendChild(divi)
-        document.getElementById("modal").appendChild(solutions_div)
-        document.getElementById("modal").appendChild(menu_button)
-        document.getElementById("modal").appendChild(play_again_button)
+        divi.appendChild(sp);
+        divi.appendChild(solutions_div);
+        divi.appendChild(button_container);
+
+        // Append everything to modal
+        document.getElementById("modal").appendChild(divi);
+
         }
     );
 }

@@ -275,10 +275,12 @@ def clouds(request):  # add word later
 
     # and the odd lang
     context["odd_lang"] = odd_lang
-    context["odd_family"] = odd_family
-    context["main_family"] = main_family
-    context["all_langs"] = all_families
-    context["words"] = random_main_words_custom
+    context["families"] = [main_family, main_family, main_family, odd_family]
+    context["words_reference"] = [t[0] for t in random_main_words_custom]
+    context["words1"] = [t[1][0] for t in random_main_words_custom]
+    context["words2"] = [t[1][1] for t in random_main_words_custom]
+    context["words3"] = [t[1][2] for t in random_main_words_custom]
+    context["words4"] =[t[1][3] for t in random_main_words_custom]
     context["lang_codes_custom"] = lang_codes_custom
     context["odd_words"] = odd_words
     
