@@ -448,8 +448,8 @@ if (gamemode == "mode1") {
         menu_button.classList.add("differentButton");
         menu_button.textContent = "Return to menu";
         menu_button.setAttribute(
-        "onclick",
-        "window.location.href = '/word_clouds/';"
+            "onclick",
+            "window.location.href = '/word_clouds/';"
         );
 
 
@@ -659,10 +659,9 @@ if (gamemode == "mode1") {
         let menu_button = document.createElement("button");
         menu_button.classList.add("differentButton");
         menu_button.textContent = "Return to menu";
-        menu_button.textContent = "Return to menu";
         menu_button.setAttribute(
-        "onclick",
-        "window.location.href = '/word_clouds/';"
+            "onclick",
+            "window.location.href = '/word_clouds/';"
         );
 
         let play_again_button = document.createElement("button");
