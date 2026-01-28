@@ -659,7 +659,11 @@ if (gamemode == "mode1") {
         let menu_button = document.createElement("button");
         menu_button.classList.add("differentButton");
         menu_button.textContent = "Return to menu";
-        menu_button.setAttribute("onclick", "window.location.href = 'http://127.0.0.1:8000/word_clouds/';");
+        menu_button.textContent = "Return to menu";
+        menu_button.setAttribute(
+        "onclick",
+        "window.location.href = '/word_clouds/';"
+        );
 
         let play_again_button = document.createElement("button");
         play_again_button.textContent = "Play again";
