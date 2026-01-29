@@ -4,7 +4,7 @@ Find the impostor amongst the words!
 [Click here to play!](https://fishm4n.pythonanywhere.com/)
 ---
 ## The Idea
-The idea was to create a guessing game that introduces the player to the world’s linguistic diversity in a fun and visually appealing way. Being presented with a wide variety of languages of many different language families and written in many 
+A guessing game that introduces the player to the world’s linguistic diversity in a fun and visually appealing way. Being presented with a wide variety of languages of many different language families and written in many 
 different scripts, the player explores the similarities and differences within and across the 
 boundaries of language families.
 
