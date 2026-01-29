@@ -1,6 +1,8 @@
 # A-Sky-of-Word-Clouds
 Find the impostor amongst the words!
+
 ![LandingPage](./screenshots/Skyofwordclouds.png)
+
 [Click here to play!](https://fishm4n.pythonanywhere.com/)
 ---
 ## The Idea
